@@ -1,0 +1,6 @@
+@Template_SimpleWebAPI_CRUD_HostAddress = http://localhost:5106
+
+GET {{Template_SimpleWebAPI_CRUD_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
