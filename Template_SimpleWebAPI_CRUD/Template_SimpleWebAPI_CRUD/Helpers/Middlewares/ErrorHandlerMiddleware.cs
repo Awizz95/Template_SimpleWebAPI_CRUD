@@ -34,10 +34,6 @@ namespace Template_SimpleWebAPI_CRUD.Helpers.Middlewares
                         _logger.LogError($"A Custom Exception Occured. ID: {id} - Message: {error.Message}");
                         response.StatusCode = (int)HttpStatusCode.BadRequest;
                         break;
-                    case CategoryNotEmptyException ex:
-                        _logger.LogError($"A Custom Exception Occured. ID: {id} - Message: {error.Message}");
-                        response.StatusCode = (int)HttpStatusCode.BadRequest;
-                        break;
                     case KeyNotFoundException ex:
                         response.StatusCode = (int)HttpStatusCode.NotFound;
                         break;

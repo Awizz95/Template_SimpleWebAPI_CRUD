@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DTO.Categories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Template_SimpleWebAPI_CRUD.Interfaces;
 using Template_SimpleWebAPI_CRUD.Models;
@@ -8,6 +9,7 @@ using Template_SimpleWebAPI_CRUD.Models.DTO.Categories;
 namespace Template_SimpleWebAPI_CRUD.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class CategoryController : ControllerBase
     {

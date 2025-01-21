@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Template_SimpleWebAPI_CRUD.Interfaces;
 using Template_SimpleWebAPI_CRUD.Models;
@@ -7,6 +8,7 @@ using Template_SimpleWebAPI_CRUD.Models.DTO.Products;
 namespace API.Controllers.Products
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class ProductController : ControllerBase
     {

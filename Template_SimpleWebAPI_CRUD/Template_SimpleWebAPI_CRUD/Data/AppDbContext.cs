@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Template_SimpleWebAPI_CRUD.Models;
 
 namespace Template_SimpleWebAPI_CRUD.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
         private readonly IConfiguration _configuration;
 
@@ -16,6 +17,11 @@ namespace Template_SimpleWebAPI_CRUD.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
         }
 
         public DbSet<Product> Products { get; set; }
